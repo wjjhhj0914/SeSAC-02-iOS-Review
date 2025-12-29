@@ -15,6 +15,44 @@ TypeScript처럼 변수명 뒤에 콜론(`:`)을 붙여 타입을 명시하거�
 ## 예시 코드
 
 ```Swift
-var score = 1000 // Int 타입으로 추론됨
-// score = "천" // Compile Error
+let a: Int = 10
+let b: Double = 5.5
+
+// let result = a + b // 에러임. 정적 타이핑 언어이므로 타입이 다르면 연산 불가
+let result = Double(a) + b // 명시적 형변환을 통해 연산 가능
+```
+
+## 1. 기본 자료형
+
+하나의 데이터를 담는 가장 기본적인 타입들.
+
+| 타입 | 설명 | 예시 |
+| :--- | :--- | :--- |
+| **`Int`** | 정수 (음수, 0, 양수) | `-10`, `0`, `100` |
+| **`Double`** | 64비트 실수 (소수점) | `3.14`, `10.0` (Swift 기본 실수형) |
+| **`Float`** | 32비트 실수 | `3.14` (Double보다 정밀도가 낮음) |
+| **`String`** | 문자열 | `"Hello Swift"` (큰따옴표 사용) |
+| **`Bool`** | 논리값 (참/거짓) | `true`, `false` |
+
+## 2. 집단 자료형
+
+여러 개의 데이터를 하나의 묶음으로 관리하는 타입들.<br />
+Swift의 컬렉션은 **모두 같은 타입의 데이터**만 담을 수 있다.
+
+* Array(배열): 순서가 있는 리스트 형태. **인덱스**로 접근.
+
+```Swift
+var colour: [String] = ["Red", "Green", "Blue"]
+```
+
+* Dictionary(딕셔너리): 키와 값의 쌍으로 이루어진 형태. **키**로 접근.
+
+```Swift
+var fruitStock: [String: Int] = ["Apple": 3, "Banana", 5]
+```
+
+* Set(집합): 순서가 없고, 중복된 값을 허용하지 않는 형태.
+
+```Swift
+var uniqueNumbers: Set<Int> = [1, 2, 3, 3] // 3은 한 번만 저장됨
 ```
